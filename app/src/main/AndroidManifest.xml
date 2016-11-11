@@ -20,7 +20,8 @@
         <activity
             android:name=".Menu"
             android:screenOrientation="landscape" />
-        <activity android:name=".Pay"></activity>
+        <activity android:name=".Pay" />
+        <activity android:name=".AfterPayed"></activity>
     </application>
 
 </manifest>
