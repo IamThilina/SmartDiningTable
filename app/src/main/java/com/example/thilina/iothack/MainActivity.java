@@ -26,4 +26,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
+    public void launchPay(View view) {
+        Intent intent = new Intent(this, Pay.class);
+        startActivity(intent);
+    }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/uiback"
+    tools:context="com.example.thilina.iothack.Pay">
+
+
+    <Button
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:text="Credit Card"
+        android:background="@color/button"
+        android:textColor="@color/textColorPrimary"
+        android:onClick="launchAfterPayed"
+        android:id="@+id/button"
+        android:layout_marginRight="66dp"
+        android:layout_marginEnd="66dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:text="Cash"
+        android:background="@color/button"
+        android:textColor="@color/textColorPrimary"
+        android:onClick="launchAfterPayed"
+        android:id="@+id/button2"
+        android:layout_marginLeft="96dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="108dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Thank You, See You Again."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="38px"
+        android:layout_marginBottom="47dp"
+        android:id="@+id/textView"
+        android:layout_marginLeft="68dp"
+        android:layout_marginStart="68dp"
+        android:layout_above="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2" />
+</RelativeLayout>

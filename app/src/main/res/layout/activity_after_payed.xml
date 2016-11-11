@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_after_payed"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/uiback"
+    tools:context="com.example.thilina.iothack.AfterPayed">
+
+    <Button
+        android:layout_width="300px"
+        android:layout_height="wrap_content"
+        android:text="Back To Menu"
+        android:background="@color/button"
+        android:textColor="@color/textColorPrimary"
+        android:onClick="launchBacktoMenu"
+        android:id="@+id/button2"
+        android:layout_marginBottom="28dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="66dp"
+        android:layout_marginEnd="66dp" />
+
+    <ImageView
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/payment"
+        android:id="@+id/imageView"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2" />
+</RelativeLayout>
