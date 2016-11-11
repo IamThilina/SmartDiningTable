@@ -30,4 +30,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Pay.class);
         startActivity(intent);
     }
+
+    public void testConnection(View view){
+        SmartTray tray = new SmartTray();
+        tray.sendMessage("buz");
+    }
 }
