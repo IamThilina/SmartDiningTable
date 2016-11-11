@@ -57,6 +57,10 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
         floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
 
+        floatingActionButton1.setColorNormal(getResources().getColor(R.color.colorAccent));
+        floatingActionButton2.setColorNormal(getResources().getColor(R.color.colorAccent));
+        floatingActionButton3.setColorNormal(getResources().getColor(R.color.colorAccent));
+
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //TODO something when floating action menu first item clicked
