@@ -14,15 +14,15 @@ import java.net.Socket;
 public class SmartTray {
 
     String TAG = "connection";
-    public void sendMessage() {
+    public void sendMessage(final String message) {
         Thread t = new Thread(){
 
             @Override
             public void run() {
                 try {
-                    Socket s = new Socket("192.168.8.107", 5000);
+                    Socket s = new Socket("192.168.8.103", 5000);
                     DataOutputStream dos = new DataOutputStream(s.getOutputStream());
-                    dos.writeUTF("buz");
+                    dos.writeUTF(message);
 
                     //read input stream
 

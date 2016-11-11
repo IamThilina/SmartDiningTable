@@ -33,6 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void testConnection(View view){
         SmartTray tray = new SmartTray();
-        tray.sendMessage();
+        tray.sendMessage("buz");
     }
 }
