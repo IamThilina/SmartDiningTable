@@ -1,6 +1,7 @@
 package com.example.thilina.iothack;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.PixelFormat;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -27,8 +29,8 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
     MediaPlayer mediaPlayer;
     SurfaceView surfaceView;
     SurfaceHolder surfaceHolder;
-    Button buttonPlayVideo;
     VideoView mVideoView;
+    ImageView mImageView;
     boolean pausing = false;;
 
     @Override
@@ -39,7 +41,7 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         //mTextView = (TextView) findViewById(R.id.test_text);
         foodName = intent.getStringExtra("XXX");
         //mTextView.setText(foodName);
-
+        mImageView = (ImageView) findViewById(R.id.processingFood);
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
         //Displays a video file.
@@ -92,6 +94,10 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
                 mVideoView.start();
             }
         });
+    }
+
+    public void setProcessingFoodImage(Bitmap bmap){
+        mImageView.setImageBitmap(bmap);
     }
 
     @Override
