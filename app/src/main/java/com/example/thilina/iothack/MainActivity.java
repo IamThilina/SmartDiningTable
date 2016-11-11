@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void launchCamera(View view) {
+    public void launchMenu(View view) {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
