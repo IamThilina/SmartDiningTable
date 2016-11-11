@@ -20,7 +20,7 @@ public class SmartTray {
             @Override
             public void run() {
                 try {
-                    Socket s = new Socket("192.168.8.103", 5000);
+                    Socket s = new Socket("192.168.8.100", 5000);
                     DataOutputStream dos = new DataOutputStream(s.getOutputStream());
                     dos.writeUTF(message);
 
