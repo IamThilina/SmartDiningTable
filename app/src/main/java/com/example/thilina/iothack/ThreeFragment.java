@@ -52,7 +52,7 @@ public class ThreeFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new FoodAdopter(itemList);
+        mAdapter = new FoodAdopter(itemList, getActivity());
         mRecyclerView.setAdapter(mAdapter);
 
         setUpData();
@@ -77,9 +77,9 @@ public class ThreeFragment extends Fragment {
 
     private void setUpData() {
         itemList.clear();
-        itemList.add(new Food(BitmapFactory.decodeResource(getResources(),R.drawable.food1), BitmapFactory.decodeResource(getResources(),R.drawable.food1)));
-        itemList.add(new Food(BitmapFactory.decodeResource(getResources(),R.drawable.food2), BitmapFactory.decodeResource(getResources(),R.drawable.food2)));
-        itemList.add(new Food(BitmapFactory.decodeResource(getResources(),R.drawable.food3), BitmapFactory.decodeResource(getResources(),R.drawable.food3)));
+        itemList.add(new Food(BitmapFactory.decodeResource(getResources(),R.drawable.d1), BitmapFactory.decodeResource(getResources(),R.drawable.d2)));
+        itemList.add(new Food(BitmapFactory.decodeResource(getResources(),R.drawable.d3), BitmapFactory.decodeResource(getResources(),R.drawable.d4)));
+//        itemList.add(new Food(BitmapFactory.decodeResource(getResources(),R.drawable.d1), BitmapFactory.decodeResource(getResources(),R.drawable.d2)));
         mAdapter.notifyDataSetChanged();
     }
 }

@@ -4,9 +4,6 @@
     android:layout_height="match_parent"
     android:layout_width="fill_parent"
     android:orientation="horizontal"
-    android:backgroundTint="#ffffff"
-    android:backgroundTintMode="multiply"
-    android:background="#e1bee7"
     android:weightSum="1.0">
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView

@@ -22,8 +22,10 @@ import java.util.List;
 public class FoodAdopter extends RecyclerView.Adapter<FoodAdopter.ViewHolder> {
 
     private static List<Food> itemList;
+    static Context mContext;
 
-    public FoodAdopter(List<Food> myItemList) {
+    public FoodAdopter(List<Food> myItemList, Context mContext) {
+        this.mContext = mContext;
         this.itemList = myItemList;
     }
 
@@ -71,12 +73,17 @@ public class FoodAdopter extends RecyclerView.Adapter<FoodAdopter.ViewHolder> {
         @Override
         public void onClick(View v) {
             if(v.getId() == mCardView.getId() || v.getId() == mImageView.getId()){
-                Toast.makeText(v.getContext(), "Card1 Pressed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(), "Card1 Pressed", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, Waiting.class);
+                intent.putExtra("XXX", "SUSHI");
+                mContext.startActivity(intent);
             }else if(v.getId() == mCardView2.getId() || v.getId() == mImageView2.getId()){
-                Toast.makeText(v.getContext(), "Card2 Pressed", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, Waiting.class);
+                intent.putExtra("XXX", "SUSHI");
+                mContext.startActivity(intent);
             }
             else {
-                Toast.makeText(v.getContext(), "ROW PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(), "ROW PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
             }
         }
 
