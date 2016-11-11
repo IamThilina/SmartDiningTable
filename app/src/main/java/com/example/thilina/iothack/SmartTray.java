@@ -31,6 +31,13 @@ public class SmartTray {
                     InputStreamReader disR2 = new InputStreamReader(dis2);
                     BufferedReader br = new BufferedReader(disR2);//create a BufferReader object for input
                     Log.d(TAG, "recieved message: "+br.readLine());
+                    /*
+                    * String encodedImage = br.readLine();
+                    byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
+                    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                    Log.d(TAG, "recieved message: "+encodedImage);
+                    mImageView.setImageBitmap(decodedByte);
+                    */
                     //print the input to the application screen
 //                    final TextView receivedMsg = (TextView) findViewById(R.id.textView2);
 //                    receivedMsg.setText(br.toString());
