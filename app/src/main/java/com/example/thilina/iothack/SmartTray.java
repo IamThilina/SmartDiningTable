@@ -36,7 +36,7 @@ public class SmartTray {
                     dis2.close();
                     s.close();
 
-                } catch (java.lang.Exception exception e) {
+                } catch (java.lang.Exception exception ) {
                     exception.printStackTrace();
                 }
             }
