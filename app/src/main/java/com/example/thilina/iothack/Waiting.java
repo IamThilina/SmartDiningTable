@@ -103,7 +103,7 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         floatingActionButton3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 VideoView mVideoView = (VideoView)findViewById(R.id.videoview);
-                String uriPath = "android.resource://com.example.thilina.iothack/"+R.raw.sushi_background;
+                String uriPath = "android.resource://com.example.thilina.iothack/"+R.raw.sushi_nutrition;
                 Uri uri = Uri.parse(uriPath);
                 mVideoView.setVideoURI(uri);
                 mVideoView.requestFocus();
