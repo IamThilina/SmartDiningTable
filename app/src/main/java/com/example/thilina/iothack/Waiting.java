@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -35,6 +36,7 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
 
     TextView mTextView;
     String foodName;
+    Button btn;
 
     FloatingActionMenu materialDesignFAM;
     FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
@@ -46,6 +48,7 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
     ImageView mImageView;
     Bitmap bmap;
     ScheduledExecutorService scheduler = new ScheduledThreadPoolExecutor(1);
+    String message = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         //mTextView = (TextView) findViewById(R.id.test_text);
         foodName = intent.getStringExtra("XXX");
         //mTextView.setText(foodName);
+        btn = (Button) findViewById(R.id.customizeBtn);
         mImageView = (ImageView) findViewById(R.id.processingFood);
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
@@ -63,7 +67,11 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         //Displays a video file.
         mVideoView = (VideoView)findViewById(R.id.videoview);
 
-
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                customizeOrder();
+            }
+        });
         String uriPath = "android.resource://com.example.thilina.iothack/"+R.raw.sushi_background;
         Uri uri = Uri.parse(uriPath);
         mVideoView.setVideoURI(uri);
@@ -75,9 +83,9 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         floatingActionButton2 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
         floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
 
-        floatingActionButton1.setColorNormal(getResources().getColor(R.color.colorAccent));
-        floatingActionButton2.setColorNormal(getResources().getColor(R.color.colorAccent));
-        floatingActionButton3.setColorNormal(getResources().getColor(R.color.colorAccent));
+        floatingActionButton1.setColorNormal(getResources().getColor(R.color.fab));
+        floatingActionButton2.setColorNormal(getResources().getColor(R.color.fab));
+        floatingActionButton3.setColorNormal(getResources().getColor(R.color.fab));
 
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -115,7 +123,7 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         thread.start();
     }
 
-    public void setProcessingFoodImage(String message){
+    public void setProcessingFoodImage(){
         try {
             Thread.sleep(5000);
             Socket s = new Socket("192.168.8.107", 5000);
@@ -129,9 +137,12 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
             InputStreamReader disR2 = new InputStreamReader(dis2);
             BufferedReader br = new BufferedReader(disR2);//create a BufferReader object for input
             String encodedImage = br.readLine();
-            byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
-            bmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-            handler.sendEmptyMessage(0);
+            Log.d("TTT", encodedImage);
+            if(!encodedImage.equals("ok")) {
+                byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
+                bmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                handler.sendEmptyMessage(0);
+            }
             dis2.close();
             s.close();
 
@@ -139,6 +150,10 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
         } catch (java.lang.Exception exception ) {
             exception.printStackTrace();
         }
+    }
+
+    public void customizeOrder(){
+        message = "Customize Order  : Add More Cheese";
     }
 
     @Override
@@ -158,14 +173,17 @@ public class Waiting extends AppCompatActivity implements SurfaceHolder.Callback
 
     @Override
     public void run() {
-        setProcessingFoodImage("Order : Sushi");
+        message = "Order : Sushi";
+        setProcessingFoodImage();
+        message = "Photo";
         while(true){
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            setProcessingFoodImage("Photo");
+            setProcessingFoodImage();
+            message = "Photo";
         }
     }
 
