@@ -23,9 +23,11 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center_vertical" />
+
     </LinearLayout>
+
     <LinearLayout
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_width="300dp"
         android:orientation="vertical"
         android:weightSum=".5"
@@ -54,10 +56,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/checkBox" />
+
+        <CheckBox
+            android:text="Add Low Fat and Sault"
+            android:textColor="@color/textColorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox3" />
+
+        <!--<Button
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:text="Back To Menu"
+            android:background="@color/button"
+            android:textColor="@color/textColorPrimary"
+            android:onClick="launchBacktoMenu"
+            android:id="@+id/button2"
+            />
+        <Button
+            android:layout_width="300px"
+            android:layout_height="wrap_content"
+            android:text="Back To Menu"
+            android:background="@color/button"
+            android:textColor="@color/textColorPrimary"
+            android:onClick="launchBacktoMenu"
+            android:id="@+id/button3"
+            />-->
         <com.github.clans.fab.FloatingActionMenu
             android:id="@+id/material_design_android_floating_action_menu"
-            android:layout_width="77dp"
-            android:layout_height="261dp"
+            android:layout_width="1535dp"
+            android:layout_height="0dp"
             fab:menu_animationDelayPerItem="55"
             fab:menu_backgroundColor="@android:color/transparent"
             fab:menu_buttonSpacing="0dp"
@@ -119,6 +147,8 @@
                 fab:fab_label="Nutrition"
                 fab:fab_size="mini"
                 fab:backgroundTint="#4000FF00" />
+
         </com.github.clans.fab.FloatingActionMenu>
+
     </LinearLayout>
 </LinearLayout>
