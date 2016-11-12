@@ -1,5 +1,8 @@
 package com.example.thilina.iothack;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -7,7 +10,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
-
 /**
  * Created by asela on 11/11/16.
  */
@@ -31,17 +33,9 @@ public class SmartTray {
                     InputStreamReader disR2 = new InputStreamReader(dis2);
                     BufferedReader br = new BufferedReader(disR2);//create a BufferReader object for input
                     Log.d(TAG, "recieved message: "+br.readLine());
-                    /*
-                    * String encodedImage = br.readLine();
+                    String encodedImage = br.readLine();
                     byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
                     Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                    Log.d(TAG, "recieved message: "+encodedImage);
-                    mImageView.setImageBitmap(decodedByte);
-                    */
-                    //print the input to the application screen
-//                    final TextView receivedMsg = (TextView) findViewById(R.id.textView2);
-//                    receivedMsg.setText(br.toString());
-
                     dis2.close();
                     s.close();
 
